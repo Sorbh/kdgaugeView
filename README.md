@@ -1,9 +1,9 @@
 # KdGaugeView
-This is a circular loading view for android.
+KDGaugeView is a simple and customizable gauge control for Android inspired by [LMGaugeView](https://github.com/lminhtm/LMGaugeView)
   
 # Motivation
 
-In default progress view, its hard to change drawable, color and animation. So this project was created to avoid these limitation and create custom easy customizable loading view.
+I need some clean Guage view for my Android application.
 
 # Getting started
 
@@ -14,14 +14,14 @@ This library is posted in jCenter
 
 #### Gradle
 ```
-implementation 'in.unicodelabs.sorbh:kdloadignview:1.0.0'
+implementation 'in.unicodelabs.sorbh:kdgaugeview:1.0.0'
 ```
 
 #### Maven
 ```
 <dependency>
   <groupId>in.unicodelabs.sorbh</groupId>
-  <artifactId>kdloadingview</artifactId>
+  <artifactId>kdgaugeview</artifactId>
   <version>1.0.0</version>
   <type>pom</type>
 </dependency>
@@ -31,14 +31,14 @@ implementation 'in.unicodelabs.sorbh:kdloadignview:1.0.0'
 
 After Importing this library you can directly use this view in your view xml
 
-    <in.unicodelabs.view.KdLoadingView
-            android:id="@+id/kdLoadingView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:tint="@color/colorPrimary"
-            app:animation="@anim/rotate"
-            app:anim_duration="2000"/>
-            
+      <in.unicodelabs.kdgaugeview.KdGaugeView
+                android:id="@+id/speedMeter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:speed_limit="75" />
+
+# Customization
   For now you can use 3 custom attributes
 
   * app:tint="@color/colorPrimary" - Color for loading view
@@ -46,7 +46,8 @@ After Importing this library you can directly use this view in your view xml
   * app:anim_duration="2000" - Animation time in ms
   
 # Screenshots
-![alt text](https://github.com/sorbh/KdLoadingView/blob/master/raw/demo.gif) 
+![alt text](https://github.com/sorbh/KdGauageView/blob/master/raw/1.jpeg)
+![alt text](https://github.com/sorbh/KdGauageView/blob/master/raw/demo.gif)
 
 # Author
   * **Saurabh K Sharma - [GIT](https://github.com/Sorbh)**
@@ -56,7 +57,7 @@ After Importing this library you can directly use this view in your view xml
  
 ## Contributing
 
-1. Fork it (<https://github.com/sorbh/KdLoadingView/fork>)
+1. Fork it (<https://github.com/sorbh/KdGaugeView/fork>)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
