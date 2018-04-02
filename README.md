@@ -46,8 +46,8 @@ After Importing this library you can directly use this view in your view xml
   * app:anim_duration="2000" - Animation time in ms
   
 # Screenshots
-![alt text](https://github.com/sorbh/KdGauageView/blob/master/raw/1.jpeg)
-![alt text](https://github.com/sorbh/KdGauageView/blob/master/raw/demo.gif)
+![alt text](https://github.com/sorbh/kdgaugeView/blob/master/raw/1.jpeg)
+![alt text](https://github.com/sorbh/kdgaugeView/blob/master/raw/demo.gif)
 
 # Author
   * **Saurabh K Sharma - [GIT](https://github.com/Sorbh)**
@@ -57,7 +57,7 @@ After Importing this library you can directly use this view in your view xml
  
 ## Contributing
 
-1. Fork it (<https://github.com/sorbh/KdGaugeView/fork>)
+1. Fork it (<https://github.com/sorbh/kdgaugeView/fork>)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
