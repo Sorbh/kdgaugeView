@@ -41,9 +41,34 @@ After Importing this library you can directly use this view in your view xml
 # Customization
   For now you can use 3 custom attributes
 
-  * app:tint="@color/colorPrimary" - Color for loading view
-  * app:animation="@anim/rotate" - Can set custom animaton drawable
-  * app:anim_duration="2000" - Animation time in ms
+  * app:maxSpeed="180" - max speed for gauge(default = 180)
+  * app:minSpeed="0" - min speed for gauge(default = 0)
+  * app:speed="60" - speed for gauge
+  * app:speed_limit="90" - speed limit for gauge(default = 90)
+  * app:maxSpeed="180" - max speed for gauge(default = 180)
+
+  * app:unitOfMeasurement="km/hr" - Speed unit for measurment for gauge(default = Km/Hr)
+
+  * app:animationTime="2000" - Animation time in ms
+
+  * app:speedTextSize="100dp" - Speed text size in the center of the gauge
+  * app:unitOfMeasurementTextSize="30dp" - Unit of measurement text size
+  * app:speedLimitTextSize="15dp" - Speed limit text size
+
+  * app:speedDialRingWidth="15dp" - Speed Dial ring width
+  * app:speedDialRingInnerPadding="15dp" - Padding between speed dial and division doted ring
+
+  * app:dialActiveColor="@color/dialActiveColor" - dial active ring color (default = #D3D3D3)
+  * app:dialInactiveColor="@color/dialInactiveColor" - dial inactive ring color (default = #E0E0E0)
+  * app:dialSpeedColor="@color/dialSpeedColor" - dial speed ring color (default = GREEN)
+  * app:dialSpeedAlertColor="@color/dialSpeedAlertColor" - dial speed alert ring color (default = RED)
+  * app:subDivisionCircleColor="@color/subDivisionCircleColor" - sub-division circle color (default = DKGRAY)
+  * app:divisionCircleColor="@color/divisionCircleColor" - division circle color (default = BLUE)
+  * app:speedTextColor="@color/speedTextColor" - speed text color (default = BLACK)
+  * app:unitOfMeasurementTextColor="@color/unitOfMeasurementTextColor" - unit of measurement text color (default = BLACK)
+  * app:speedLimitTextColor="@color/speedLimitTextColor" - speed limit text color (default = BLACK)
+
+
   
 # Screenshots
 ![alt text](https://github.com/sorbh/kdgaugeView/blob/master/raw/1.jpeg)
