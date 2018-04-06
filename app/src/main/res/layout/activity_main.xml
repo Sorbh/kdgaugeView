@@ -17,7 +17,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            app:speed_limit="75" />
+            app:maxSpeed="180"
+            app:minSpeed="0"
+            app:speed="60"
+            app:speed_limit="90"
+            app:animationTime="2000"/>
 
     </FrameLayout>
 

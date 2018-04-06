@@ -1,24 +1,31 @@
 # KdGaugeView
 KDGaugeView is a simple and customizable gauge control for Android inspired by [LMGaugeView](https://github.com/lminhtm/LMGaugeView)
-  
+
+![open source](https://img.shields.io/badge/Open%20source-free-green.svg?longCache=true&style=flat-square)
+![build number](https://img.shields.io/badge/Build-passing-green.svg?longCache=true&style=flat-square)
+![version number](https://img.shields.io/badge/Download-1.0.0-blue.svg?longCache=true&style=flat-square)
+![Size](https://img.shields.io/badge/Size-9KB-blue.svg?longCache=true&style=flat-square)
+![Method count](https://img.shields.io/badge/Method%20count-25k-red.svg?longCache=true&style=flat-square)
+![License Apache](https://img.shields.io/badge/License-apache%202.0-red.svg?longCache=true&style=flat-square)
+
 # Motivation
 
 I need some clean Guage view for my Android application.
 
 # Getting started
 
-## Installing 
+## Installing
 To use this library simply import it by placing the following line under dependencies in your app module's build.gradle file
 
 This library is posted in jCenter
 
 #### Gradle
-```
+```Gradle
 implementation 'in.unicodelabs.sorbh:kdgaugeview:1.0.0'
 ```
 
 #### Maven
-```
+```Gradle
 <dependency>
   <groupId>in.unicodelabs.sorbh</groupId>
   <artifactId>kdgaugeview</artifactId>
@@ -29,23 +36,23 @@ implementation 'in.unicodelabs.sorbh:kdgaugeview:1.0.0'
 
 # Usage
 
-After Importing this library you can directly use this view in your view xml
+After Importing this library you can directly use this view in your view XML
 
-      <in.unicodelabs.kdgaugeview.KdGaugeView
+```java
+<in.unicodelabs.kdgaugeview.KdGaugeView
                 android:id="@+id/speedMeter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 app:speed_limit="75" />
-
+```
 # Customization
-  For now you can use 3 custom attributes
+  For now you can these custom attributes
 
   * app:maxSpeed="180" - max speed for gauge(default = 180)
   * app:minSpeed="0" - min speed for gauge(default = 0)
   * app:speed="60" - speed for gauge
   * app:speed_limit="90" - speed limit for gauge(default = 90)
-  * app:maxSpeed="180" - max speed for gauge(default = 180)
 
   * app:unitOfMeasurement="km/hr" - Speed unit for measurment for gauge(default = Km/Hr)
 
@@ -69,9 +76,10 @@ After Importing this library you can directly use this view in your view xml
   * app:speedLimitTextColor="@color/speedLimitTextColor" - speed limit text color (default = BLACK)
 
 
-  
+
 # Screenshots
 ![alt text](https://github.com/sorbh/kdgaugeView/blob/master/raw/1.jpeg)
+
 ![alt text](https://github.com/sorbh/kdgaugeView/blob/master/raw/demo.gif)
 
 # Author
