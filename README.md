@@ -2,6 +2,7 @@
 KDGaugeView is a simple and customizable gauge control for Android inspired by [LMGaugeView](https://github.com/lminhtm/LMGaugeView)
 
 ![open source](https://img.shields.io/badge/Open%20source-free-green.svg?longCache=true&style=flat-square)
+[![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-KdGaugeView-green.svg?style=flat )]( https://android-arsenal.com/details/1/6894 )
 ![build number](https://img.shields.io/badge/Build-passing-green.svg?longCache=true&style=flat-square)
 ![version number](https://img.shields.io/badge/Download-1.0.0-blue.svg?longCache=true&style=flat-square)
 ![Size](https://img.shields.io/badge/Size-9KB-blue.svg?longCache=true&style=flat-square)
