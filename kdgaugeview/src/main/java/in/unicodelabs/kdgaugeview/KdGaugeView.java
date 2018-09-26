@@ -337,6 +337,31 @@ public class KdGaugeView extends View {
         startProgressAnimation(mSpeed);
     }
 
+    public void setMaxSpeed(float mMaxSpeed) {
+
+        //if supplied max speed is less than min speed, use the min speed
+        if (mMaxSpeed < mMinSpeed)
+            mMaxSpeed = mMinSpeed;
+
+        this.mMaxSpeed = mMaxSpeed;
+    }
+
+    public void setMinSpeed(float mMinSpeed) {
+
+        //if supplied min speed is more than max speed, use the max speed
+        if (mMinSpeed > mMaxSpeed)
+            mMinSpeed = mMaxSpeed;
+
+        this.mMinSpeed = mMinSpeed;
+    }
+
+    public void setUnitOfMeasurement(string unitOfMeasurement) {
+        this.unitOfMeasurement = unitOfMeasurement;
+    }
+
+    public void setAnimationTime(int mAnimationTime) {
+        this.mAnimationTime = mAnimationTime;
+    }
 
     @Override
     public void onWindowFocusChanged(boolean hasWindowFocus) {
