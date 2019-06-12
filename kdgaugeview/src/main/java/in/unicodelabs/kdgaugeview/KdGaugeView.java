@@ -50,10 +50,11 @@ public class KdGaugeView extends View {
     private int speedTextColor = Color.BLACK;
     private int speedUnitTextColor = Color.BLACK;
     private int speedLimitTexteColor = Color.BLACK;
-
+    
+    private int[] mColors;
+    private float[] mChangeValues;
 
     private RectF progressBarRect = new RectF();
-
 
     private float mProgressBarCircleRadius;
     private float mDotedCircleRadius;
@@ -257,19 +258,31 @@ public class KdGaugeView extends View {
         mProgressBarPaint.setColor(dialInactiveColor);
         canvas.drawArc(progressBarRect, 270, 90, false, mProgressBarPaint);
 
+        //Check if user allocated changeValues and Colors
+        if (mChangeValues != null && mColors != null) {
+            if (mChangeValues.length != mColors.length) { //TODO: Proper error msg
+                Log.d("KDGAUGEVIEW", "ChangeValues and Colors array must be the same length!");
+            } else {
+                //Convert values to angles
+                float[] changeAngles = new float[mChangeValues.length];
+                for (int i = 0; i < mChangeValues.length; i++) {
+                    changeAngles[i] = mChangeValues[i] / mPerDegreeSpeed;
+                }
+                initMultiColor(canvas, mColors, changeAngles);
+            }
 
-        //Draw Speed Progress
-        float speedAngle = mCurrentSpeed / mPerDegreeSpeed;
+        } else { //If user doesn't allocate colors and changeValues, proceed as normal
+            float speedAngle = mCurrentSpeed / mPerDegreeSpeed;
 
-        if (speedAngle <= alertSpeedAngle) {
-            mProgressBarPaint.setColor(dialSpeedColor);
-            canvas.drawArc(progressBarRect, 0, speedAngle, false, mProgressBarPaint);
-        } else {
+            if (speedAngle <= alertSpeedAngle) {
+                mProgressBarPaint.setColor(dialSpeedColor);
+                canvas.drawArc(progressBarRect, 0, speedAngle, false, mProgressBarPaint);
+            } else {
 //            mSpeedProgressPaint.setColor(Color.GREEN);
 //            canvas.drawArc(progressBarRect, 0, alertSpeedAngle, false, mSpeedProgressPaint);
-
-            mProgressBarPaint.setColor(dialSpeedAlertColor);
-            canvas.drawArc(progressBarRect, 0, speedAngle, false, mProgressBarPaint);
+                mProgressBarPaint.setColor(dialSpeedAlertColor);
+                canvas.drawArc(progressBarRect, 0, speedAngle, false, mProgressBarPaint);
+            }
         }
 
 
@@ -300,6 +313,56 @@ public class KdGaugeView extends View {
         canvas.drawText(unitOfMeasurement, x, y - ((mSpeedUnitPaint.descent() + mSpeedUnitPaint.ascent()) / 2), mSpeedUnitPaint);
 
 
+    }
+    
+    public void initMultiColor(Canvas canvas, int[] colors, float[] changeAngles) {
+
+        //Error check for OOB angles
+        for (float angle : changeAngles) {
+            if (angle > mMaxSpeed) {
+                angle = mMaxSpeed;
+            }
+        }
+
+        //Add starting angle to changeAngles
+        float speedAngle = mCurrentSpeed / mPerDegreeSpeed;
+
+        //Keep tally of angle left to be drawn
+        float angleLeft = speedAngle;
+
+        //Loop through the angles for each color, and draw aprropriate progress bar
+        for (int i = 0; i < changeAngles.length; i++) {
+            float changeAngle = changeAngles[i];
+            int color = colors[i];
+
+            //Temporarily change colors
+            mAlertDotCirclePaint.setColor(color);
+            mProgressBarPaint.setColor(color);
+
+            //Draw alert circle
+            canvas.drawCircle((float) (mCircleCenterX + mDotedCircleRadius * Math.cos(Math.toRadians(changeAngle))), (float) (mCircleCenterY + mDotedCircleRadius * Math.sin(Math.toRadians(changeAngle))), 6, mAlertDotCirclePaint);
+
+            //The first angle, starts at minimum
+            if ((i - 1) < 0) {
+                if (speedAngle <= changeAngle) { //If the  current speed is less than the maximum for this color band, only go up till current speed
+                    canvas.drawArc(progressBarRect, mMinSpeed / mPerDegreeSpeed, angleLeft, false, mProgressBarPaint);
+                    break;
+                } else { //If current speed is more than maximum, go until the end of color band
+                    canvas.drawArc(progressBarRect, mMinSpeed / mPerDegreeSpeed, changeAngle, false, mProgressBarPaint);
+                }
+                angleLeft = speedAngle - changeAngle;
+            } else { //Same logic applied here
+                if (speedAngle <= changeAngle) {
+                    canvas.drawArc(progressBarRect, changeAngles[i - 1], angleLeft, false, mProgressBarPaint);
+                    break;
+                } else {
+                    canvas.drawArc(progressBarRect, changeAngles[i - 1], changeAngle - changeAngles[i - 1], false, mProgressBarPaint);
+                }
+                angleLeft = speedAngle - changeAngle;
+            }
+        }
+        //Return to original paint color
+        mAlertDotCirclePaint.setColor(dialSpeedColor);
     }
 
     public void startProgressAnimation(float speed) {
@@ -360,4 +423,21 @@ public class KdGaugeView extends View {
         super.onAttachedToWindow();
         // onCreate() called
     }
+    
+    public int[] getColors() {
+        return mColors;
+    }
+
+    public void setColors(int[] colors) {
+        this.mColors = colors;
+    }
+
+    public float[] getChangeValues() {
+        return mChangeValues;
+    }
+
+    public void setChangeValues(float[] changeValues) {
+        this.mChangeValues = changeValues;
+    }
+
 }
