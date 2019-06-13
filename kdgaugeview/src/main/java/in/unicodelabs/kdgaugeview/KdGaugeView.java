@@ -442,10 +442,14 @@ public class KdGaugeView extends View {
     
      public void setmMinSpeed(float mMinSpeed) {
         this.mMinSpeed = mMinSpeed;
+        mPerDegreeSpeed = (mMaxSpeed - mMinSpeed) / 270;
+
     }
 
     public void setmMaxSpeed(float mMaxSpeed) {
         this.mMaxSpeed = mMaxSpeed;
+        mPerDegreeSpeed = (mMaxSpeed - mMinSpeed) / 270;
+
     }
 
     public void setmSafeSpeedLimit(float mSafeSpeedLimit) {
