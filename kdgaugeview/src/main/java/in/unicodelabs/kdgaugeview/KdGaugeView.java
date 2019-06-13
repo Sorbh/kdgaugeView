@@ -439,5 +439,81 @@ public class KdGaugeView extends View {
     public void setChangeValues(float[] changeValues) {
         this.mChangeValues = changeValues;
     }
+    
+     public void setmMinSpeed(float mMinSpeed) {
+        this.mMinSpeed = mMinSpeed;
+    }
+
+    public void setmMaxSpeed(float mMaxSpeed) {
+        this.mMaxSpeed = mMaxSpeed;
+    }
+
+    public void setmSafeSpeedLimit(float mSafeSpeedLimit) {
+        this.mSafeSpeedLimit = mSafeSpeedLimit;
+    }
+
+    public void setUnitOfMeasurement(String unitOfMeasurement) {
+        this.unitOfMeasurement = unitOfMeasurement;
+    }
+
+    public void setmAnimationTime(int mAnimationTime) {
+        this.mAnimationTime = mAnimationTime;
+    }
+
+    public void setmSpeedTextSize(float mSpeedTextSize) {
+        this.mSpeedTextSize = mSpeedTextSize;
+    }
+
+    public void setmSpeedUnitTextSize(float mSpeedUnitTextSize) {
+        this.mSpeedUnitTextSize = mSpeedUnitTextSize;
+    }
+
+    public void setmSpeedLimitTextSize(float mSpeedLimitTextSize) {
+        this.mSpeedLimitTextSize = mSpeedLimitTextSize;
+    }
+
+    public void setSpeedDialRingWidth(float speedDialRingWidth) {
+        this.speedDialRingWidth = speedDialRingWidth;
+    }
+
+    public void setSpeedDialRingInnerPadding(float speedDialRingInnerPadding) {
+        this.speedDialRingInnerPadding = speedDialRingInnerPadding;
+    }
+
+    public void setDialActiveColor(int dialActiveColor) {
+        this.dialActiveColor = dialActiveColor;
+    }
+
+    public void setDialInactiveColor(int dialInactiveColor) {
+        this.dialInactiveColor = dialInactiveColor;
+    }
+
+    public void setDialSpeedColor(int dialSpeedColor) {
+        this.dialSpeedColor = dialSpeedColor;
+    }
+
+    public void setDialSpeedAlertColor(int dialSpeedAlertColor) {
+        this.dialSpeedAlertColor = dialSpeedAlertColor;
+    }
+
+    public void setSubDivisionCircleColor(int subDivisionCircleColor) {
+        this.subDivisionCircleColor = subDivisionCircleColor;
+    }
+
+    public void setDivisionCircleColor(int divisionCircleColor) {
+        this.divisionCircleColor = divisionCircleColor;
+    }
+
+    public void setSpeedTextColor(int speedTextColor) {
+        this.speedTextColor = speedTextColor;
+    }
+
+    public void setSpeedUnitTextColor(int speedUnitTextColor) {
+        this.speedUnitTextColor = speedUnitTextColor;
+    }
+
+    public void setSpeedLimitTexteColor(int speedLimitTexteColor) {
+        this.speedLimitTexteColor = speedLimitTexteColor;
+    }
 
 }
