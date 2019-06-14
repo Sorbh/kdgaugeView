@@ -12,7 +12,7 @@ KDGaugeView is a simple and customizable gauge control for Android inspired by [
 # My (Rafay) Contributions!
 1. Added Java/Kotlin Customization so you can programatically update features of your Gauge.
 2. Made the progress infintely customizable so you can add as many colors and specify where each begins/ends allowing you to set custom thresholds
-![alt text](https://github.com/rafayk7/kdgaugeView/blob/master/raw/progressbarview.png)
+![alt text](https://github.com/rafayk7/kdgaugeView/blob/master/raw/view21.PNG)
 3. (COMING SOON) Customizability for a needle and/or for an indicator for a specific goal
 4. (COMING SOON) Anything else you may want :)
 
