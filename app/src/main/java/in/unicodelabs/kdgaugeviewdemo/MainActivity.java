@@ -7,7 +7,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import in.unicodelabs.kdgaugeview.KdGaugeView;
-import in.unicodelabs.location.CommandLocation;
 
 
 public class MainActivity extends AppCompatActivity {
